@@ -20,6 +20,7 @@ function love.load()
 	
 	--Load de GUI
 	guiInfo = Gui.new()
+	
 	--"#FF0F00FF"
 	local healthBar = guiInfo:createBar("health",(width-220),5,1,100,"#FF0000EE","#ff0f00FF",600)
 	local energyBar = guiInfo:createBar("energy",(width-220),25,1,100,"#0000FFFFF","#0000FFFFF",250)
@@ -59,9 +60,9 @@ function love.draw()
 		guiInfo:createText("GAME OVER",400,height/2.5,100)
 	end
 
-    --Propriedades do mapa
-    wave:draw()
-
+   	 --Propriedades do mapa
+    	wave:draw()
+	
 	--Propriedades do player:
 	spaceShip:draw()
 
@@ -75,10 +76,6 @@ end
 function love.keypressed(key)
 	if(key == "lctrl") then
 		spaceShip:attack(spaceShip.currentWeapon)
-	end
-	if(key == "x") then
-
-		monster:attack("Classic")
 	end
 	if(key == "escape") then
 		love.event.quit()
